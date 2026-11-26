@@ -26,7 +26,7 @@ D²ES-Net combines three interacting mechanisms.
 A compact scene descriptor is constructed from multiscale local contrast,
 directional scattering responses, and spatial activation statistics. A
 lightweight router predicts a distribution over ANN channel ratios
-\(\{0.25, 0.50, 0.75\}\). During training, candidates are softly combined
+`{0.25, 0.50, 0.75}`. During training, candidates are softly combined
 according to the routing distribution. During inference, only the
 highest-probability path is executed, making computation dependent on scene
 content while retaining a single-path deployment cost.
@@ -36,7 +36,7 @@ Implementation: [`d2esnet/router.py`](d2esnet/router.py),
 
 ### 2. Scattering-evidence-driven temporal spiking
 
-The selected spiking channels are unfolded over \(T\) internal steps. Rather
+The selected spiking channels are unfolded over `T` internal steps. Rather
 than repeating the input, the evidence encoder produces a distinct spatial map
 at each step from multiscale contrast and directional scattering responses.
 These maps modulate leaky-integrate-and-fire membrane accumulation and spike
@@ -136,7 +136,7 @@ print("selected SNN ratio:", 1.0 - block.last_selected_ratio)
 
 The manuscript evaluates the method on HRSID and SRSDD-v1.0 using:
 
-- \(800 \times 800\) input resolution;
+- `800 × 800` input resolution;
 - batch size 32 and 100 training epochs;
 - three independent random seeds;
 - no pretrained detector weights;
